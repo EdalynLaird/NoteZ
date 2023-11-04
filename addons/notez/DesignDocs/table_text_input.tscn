@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://doqf3hgh12g0c"]
+
+[ext_resource type="Texture2D" uid="uid://crseyhlor0sdk" path="res://addons/notez/Sprites/table walls.png" id="1_r8jxh"]
+
+[node name="TableTextInput" type="NinePatchRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_r8jxh")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="L" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/minimum_character_width = 1
+alignment = 1
+flat = true

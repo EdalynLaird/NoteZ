@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://bthnqpf5fc7yf"]
+
+[ext_resource type="Script" path="res://addons/notez/Scene Notes/scene_notes.gd" id="1_jvwcy"]
+[ext_resource type="PackedScene" uid="uid://cvnenwe4h60fg" path="res://addons/notez/Todos/todos_container.tscn" id="2_2ujst"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y4d4"]
+bg_color = Color(0.513726, 0.109804, 0.364706, 1)
+
+[sub_resource type="Theme" id="Theme_cacnq"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_1y4d4")
+
+[node name="SceneNotes" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_cacnq")
+script = ExtResource("1_jvwcy")
+
+[node name="VSP" type="VSplitContainer" parent="."]
+layout_mode = 2
+
+[node name="Text" type="VBoxContainer" parent="VSP"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PC" type="PanelContainer" parent="VSP/Text"]
+layout_mode = 2
+
+[node name="Controls" type="HBoxContainer" parent="VSP/Text/PC"]
+layout_mode = 2
+
+[node name="Save" type="Button" parent="VSP/Text/PC/Controls"]
+layout_mode = 2
+text = "Save"
+
+[node name="Reject" type="Button" parent="VSP/Text/PC/Controls"]
+layout_mode = 2
+text = "Reject"
+
+[node name="Edit" type="Button" parent="VSP/Text/PC/Controls"]
+layout_mode = 2
+text = "Edit"
+
+[node name="Create" type="Button" parent="VSP/Text/PC/Controls"]
+layout_mode = 2
+text = "Create"
+
+[node name="Referesh" type="Button" parent="VSP/Text/PC/Controls"]
+layout_mode = 2
+text = "Referesh"
+
+[node name="Delete" type="Button" parent="VSP/Text/PC/Controls"]
+layout_mode = 2
+text = "Delete"
+
+[node name="BackgroundColor" type="ColorPickerButton" parent="VSP/Text/PC/Controls"]
+custom_minimum_size = Vector2(31, 31)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Container" type="MarginContainer" parent="VSP/Text"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VSP/Text/Container"]
+visible = false
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="VSP/Text/Container"]
+layout_mode = 2
+
+[node name="Todos" parent="VSP" instance=ExtResource("2_2ujst")]
+layout_mode = 2

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvkx1eh3cfjxa"]
+
+[ext_resource type="Script" path="res://addons/notez/DesignDocs/goto.gd" id="1_1ix3q"]
+[ext_resource type="Texture2D" uid="uid://ddg43o02beixh" path="res://addons/notez/Sprites/tab corner grabbed.png" id="1_5g5f8"]
+
+[node name="Goto" type="HBoxContainer"]
+z_index = 10
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_1ix3q")
+
+[node name="L" type="LineEdit" parent="."]
+layout_mode = 2
+expand_to_text_length = true
+
+[node name="T" type="TextureRect" parent="."]
+layout_mode = 2
+focus_mode = 2
+texture = ExtResource("1_5g5f8")
+expand_mode = 3
+flip_h = true

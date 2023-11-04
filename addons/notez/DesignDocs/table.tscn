@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctcwc1i8ocy0c"]
+
+[ext_resource type="Script" path="res://addons/notez/DesignDocs/table.gd" id="1_7cxyb"]
+
+[node name="VB" type="VBoxContainer"]
+z_index = 10
+offset_right = 1.0
+offset_bottom = 27.0
+script = ExtResource("1_7cxyb")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GC" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = 3

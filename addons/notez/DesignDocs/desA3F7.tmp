@@ -1,0 +1,217 @@
+[gd_scene load_steps=13 format=3 uid="uid://da4trgn1xxrcd"]
+
+[ext_resource type="Script" path="res://addons/notez/DesignDocs/design_docs.gd" id="1_8ey4y"]
+[ext_resource type="Texture2D" uid="uid://bdjsjk1eywlxp" path="res://addons/notez/Sprites/add.png" id="2_gpbdt"]
+[ext_resource type="Texture2D" uid="uid://b5em8rm4wuxsl" path="res://addons/notez/Sprites/tag.png" id="3_6duri"]
+[ext_resource type="Texture2D" uid="uid://banj4gm85sta" path="res://addons/notez/Sprites/delete.png" id="4_jgi46"]
+[ext_resource type="Texture2D" uid="uid://b5gcshy1mycyc" path="res://addons/notez/Sprites/visible.png" id="5_ltd07"]
+[ext_resource type="Texture2D" uid="uid://c2inpyd4mn036" path="res://addons/notez/Sprites/invisible.png" id="6_dhuxr"]
+[ext_resource type="Texture2D" uid="uid://cg3afoov1e52a" path="res://addons/notez/Sprites/edit.png" id="7_4s2ts"]
+[ext_resource type="Texture2D" uid="uid://cbbr8fjr7mi4s" path="res://addons/notez/Sprites/yes.png" id="8_sx5e4"]
+[ext_resource type="Texture2D" uid="uid://dokjfed8od8o3" path="res://addons/notez/Sprites/no.png" id="9_fb4rx"]
+[ext_resource type="Texture2D" uid="uid://b4o5y3dw4bgtr" path="res://addons/notez/Sprites/search.png" id="10_70lgj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xaib"]
+
+[sub_resource type="Theme" id="Theme_js7vr"]
+VSeparator/styles/separator = SubResource("StyleBoxEmpty_4xaib")
+
+[node name="DesignDocs" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_js7vr")
+script = ExtResource("1_8ey4y")
+
+[node name="VS" type="HSplitContainer" parent="."]
+layout_mode = 2
+split_offset = 265
+
+[node name="VB" type="VBoxContainer" parent="VS"]
+layout_mode = 2
+
+[node name="HB" type="HBoxContainer" parent="VS/VB"]
+layout_mode = 2
+
+[node name="Add" type="Button" parent="VS/VB/HB"]
+layout_mode = 2
+icon = ExtResource("2_gpbdt")
+
+[node name="CreateDoc" type="FileDialog" parent="VS/VB/HB/Add"]
+initial_position = 2
+size = Vector2i(392, 300)
+root_subfolder = ".Notez/docs"
+
+[node name="Tags" type="Button" parent="VS/VB/HB"]
+layout_mode = 2
+icon = ExtResource("3_6duri")
+
+[node name="Tree" type="Tree" parent="VS/VB"]
+layout_mode = 2
+size_flags_vertical = 3
+hide_root = true
+
+[node name="Main" type="HBoxContainer" parent="VS"]
+layout_mode = 2
+
+[node name="GotoControls" type="VBoxContainer" parent="VS/Main"]
+layout_mode = 2
+
+[node name="Add" type="Button" parent="VS/Main/GotoControls"]
+layout_mode = 2
+icon = ExtResource("2_gpbdt")
+
+[node name="Delete" type="Button" parent="VS/Main/GotoControls"]
+layout_mode = 2
+icon = ExtResource("4_jgi46")
+
+[node name="Hide" type="CheckBox" parent="VS/Main/GotoControls"]
+layout_mode = 2
+theme_override_icons/checked = ExtResource("5_ltd07")
+theme_override_icons/unchecked = ExtResource("6_dhuxr")
+button_pressed = true
+flat = true
+
+[node name="SC" type="ScrollContainer" parent="VS/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VB" type="VBoxContainer" parent="VS/Main/SC"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="PanelContainer" parent="VS/Main/SC/VB"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VS/Main/SC/VB/Title"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextControls" type="HBoxContainer" parent="VS/Main/SC/VB"]
+layout_mode = 2
+
+[node name="Edit" type="Button" parent="VS/Main/SC/VB/TextControls"]
+layout_mode = 2
+text = "Edit"
+icon = ExtResource("7_4s2ts")
+
+[node name="Save" type="Button" parent="VS/Main/SC/VB/TextControls"]
+layout_mode = 2
+text = "Save"
+icon = ExtResource("8_sx5e4")
+
+[node name="Reject" type="Button" parent="VS/Main/SC/VB/TextControls"]
+layout_mode = 2
+text = "Reject"
+icon = ExtResource("9_fb4rx")
+
+[node name="VSeparator" type="VSeparator" parent="VS/Main/SC/VB/TextControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VS/Main/SC/VB/TextControls"]
+layout_mode = 2
+text = "Doc Color"
+
+[node name="DocColor" type="ColorPickerButton" parent="VS/Main/SC/VB/TextControls"]
+custom_minimum_size = Vector2(31, 31)
+layout_mode = 2
+
+[node name="Text" type="MarginContainer" parent="VS/Main/SC/VB"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VS/Main/SC/VB/Text"]
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="Tables" type="Control" parent="VS/Main/SC/VB/Text/RichTextLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Gotos" type="Control" parent="VS/Main/SC/VB/Text/RichTextLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="VS/Main/SC/VB/Text"]
+visible = false
+layout_mode = 2
+
+[node name="TodoControls" type="HBoxContainer" parent="VS/Main/SC/VB"]
+layout_mode = 2
+
+[node name="Add" type="Button" parent="VS/Main/SC/VB/TodoControls"]
+layout_mode = 2
+text = "Add Todo"
+icon = ExtResource("2_gpbdt")
+
+[node name="MenuButton" type="MenuButton" parent="VS/Main/SC/VB/TodoControls"]
+layout_mode = 2
+text = "Sort: Name"
+
+[node name="LineEdit" type="LineEdit" parent="VS/Main/SC/VB/TodoControls"]
+layout_mode = 2
+right_icon = ExtResource("10_70lgj")
+
+[node name="NewTodo" type="Window" parent="VS/Main/SC/VB/TodoControls"]
+title = "New Todo"
+initial_position = 2
+size = Vector2i(200, 100)
+visible = false
+unresizable = true
+
+[node name="PC" type="PanelContainer" parent="VS/Main/SC/VB/TodoControls/NewTodo"]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VB" type="VBoxContainer" parent="VS/Main/SC/VB/TodoControls/NewTodo/PC"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Name" type="LineEdit" parent="VS/Main/SC/VB/TodoControls/NewTodo/PC/VB"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HB" type="HBoxContainer" parent="VS/Main/SC/VB/TodoControls/NewTodo/PC/VB"]
+layout_mode = 2
+
+[node name="Create" type="Button" parent="VS/Main/SC/VB/TodoControls/NewTodo/PC/VB/HB"]
+custom_minimum_size = Vector2(31, 31)
+layout_mode = 2
+text = "Create"
+
+[node name="Control" type="VSeparator" parent="VS/Main/SC/VB/TodoControls/NewTodo/PC/VB/HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Cancel" type="Button" parent="VS/Main/SC/VB/TodoControls/NewTodo/PC/VB/HB"]
+custom_minimum_size = Vector2(31, 31)
+layout_mode = 2
+text = "Cancel"
+
+[node name="Error" type="Label" parent="VS/Main/SC/VB/TodoControls/NewTodo/PC/VB"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Name Already Used!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Todos" type="VBoxContainer" parent="VS/Main/SC/VB"]
+layout_mode = 2
+size_flags_horizontal = 0

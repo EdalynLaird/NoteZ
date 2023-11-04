@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d318k20kgrivr"]
+
+[ext_resource type="Script" path="res://addons/notez/Todos/todo_list.gd" id="1_112le"]
+[ext_resource type="PackedScene" uid="uid://cvnenwe4h60fg" path="res://addons/notez/Todos/todos_container.tscn" id="4_ts2ox"]
+
+[node name="TodoList" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_112le")
+
+[node name="Todos" parent="." instance=ExtResource("4_ts2ox")]
+layout_mode = 2

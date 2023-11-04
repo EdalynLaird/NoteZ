@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvnenwe4h60fg"]
+
+[ext_resource type="Script" path="res://addons/notez/Todos/todos_container.gd" id="1_ioq3q"]
+[ext_resource type="Texture2D" uid="uid://b8v0ngrh8iuoy" path="res://addons/notez/Sprites/add.svg" id="2_3wxb3"]
+[ext_resource type="Texture2D" uid="uid://bd1tc8pm1wbb6" path="res://addons/notez/Sprites/search.svg" id="3_hmoe1"]
+
+[sub_resource type="Theme" id="Theme_0nqtf"]
+
+[node name="Todos" type="VBoxContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_0nqtf")
+script = ExtResource("1_ioq3q")
+
+[node name="TodoControls" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Add" type="Button" parent="TodoControls"]
+layout_mode = 2
+text = "Add Todo"
+icon = ExtResource("2_3wxb3")
+
+[node name="MenuButton" type="MenuButton" parent="TodoControls"]
+layout_mode = 2
+text = "Sort: Name"
+flat = false
+item_count = 3
+popup/item_0/text = "Name"
+popup/item_0/id = 0
+popup/item_1/text = "Tag"
+popup/item_1/id = 1
+popup/item_2/text = "Completed(y/n)"
+popup/item_2/id = 2
+
+[node name="SortInput" type="LineEdit" parent="TodoControls"]
+layout_mode = 2
+right_icon = ExtResource("3_hmoe1")
+
+[node name="NewTodo" type="Window" parent="TodoControls"]
+title = "New Todo"
+initial_position = 2
+size = Vector2i(235, 130)
+visible = false
+transient = true
+exclusive = true
+borderless = true
+
+[node name="PC" type="PanelContainer" parent="TodoControls/NewTodo"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MC" type="MarginContainer" parent="TodoControls/NewTodo/PC"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VB" type="VBoxContainer" parent="TodoControls/NewTodo/PC/MC"]
+layout_mode = 2
+
+[node name="Name" type="LineEdit" parent="TodoControls/NewTodo/PC/MC/VB"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HB" type="HBoxContainer" parent="TodoControls/NewTodo/PC/MC/VB"]
+layout_mode = 2
+
+[node name="Create" type="Button" parent="TodoControls/NewTodo/PC/MC/VB/HB"]
+custom_minimum_size = Vector2(31, 31)
+layout_mode = 2
+text = "Create"
+
+[node name="Control" type="VSeparator" parent="TodoControls/NewTodo/PC/MC/VB/HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Cancel" type="Button" parent="TodoControls/NewTodo/PC/MC/VB/HB"]
+custom_minimum_size = Vector2(31, 31)
+layout_mode = 2
+text = "Cancel"
+
+[node name="MB" type="MenuButton" parent="TodoControls/NewTodo/PC/MC/VB"]
+layout_mode = 2
+text = "Pick Todo"
+flat = false
+
+[node name="Error" type="Label" parent="TodoControls/NewTodo/PC/MC/VB"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Name Already Used!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TodoContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3

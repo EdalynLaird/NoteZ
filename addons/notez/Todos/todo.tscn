@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcpr227wpgira"]
+
+[ext_resource type="Script" path="res://addons/notez/Todos/todo.gd" id="1_1tame"]
+[ext_resource type="Texture2D" uid="uid://bs6by0limlf7a" path="res://addons/notez/Sprites/speech bouble.png" id="2_bip7t"]
+[ext_resource type="Texture2D" uid="uid://cbk2d0kvubxuj" path="res://addons/notez/Sprites/tag.svg" id="2_eq0ib"]
+[ext_resource type="Texture2D" uid="uid://dam25m07jg0er" path="res://addons/notez/Sprites/more.png" id="4_5jds0"]
+
+[node name="Todo" type="PanelContainer"]
+offset_right = 221.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
+script = ExtResource("1_1tame")
+
+[node name="HB" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="HB"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="CB" type="CheckBox" parent="HB"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="HB"]
+layout_mode = 2
+text = "Todo: "
+
+[node name="Tags" type="Button" parent="HB"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+icon = ExtResource("2_eq0ib")
+icon_alignment = 1
+
+[node name="ProgressLog" type="Button" parent="HB"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+icon = ExtResource("2_bip7t")
+icon_alignment = 1
+
+[node name="More" type="MenuButton" parent="HB"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+icon = ExtResource("4_5jds0")
+icon_alignment = 1
+expand_icon = true
+item_count = 2
+popup/item_0/text = "delete from here"
+popup/item_0/id = 0
+popup/item_1/text = "delete all"
+popup/item_1/id = 1
+
+[node name="ProgessLogWindow" type="Window" parent="."]
+title = "Progress Log"
+initial_position = 2
+size = Vector2i(500, 500)
+visible = false
+
+[node name="TE" type="TextEdit" parent="ProgessLogWindow"]
+offset_right = 500.0
+offset_bottom = 500.0
+
+[node name="DeleteConfirmation" type="ConfirmationDialog" parent="."]
+initial_position = 2
+ok_button_text = "Delete"

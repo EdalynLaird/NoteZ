@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwpq38e1uyx2w"]
+
+[ext_resource type="Script" path="res://addons/notez/tag_manager.gd" id="1_iuhso"]
+
+[node name="TagManager" type="Window"]
+initial_position = 2
+size = Vector2i(500, 500)
+exclusive = true
+script = ExtResource("1_iuhso")
+
+[node name="PC" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HB" type="HBoxContainer" parent="PC"]
+layout_mode = 2
+
+[node name="Controls" type="VBoxContainer" parent="PC/HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Save" type="Button" parent="PC/HB/Controls"]
+layout_mode = 2
+text = "Save"
+
+[node name="Reject" type="Button" parent="PC/HB/Controls"]
+layout_mode = 2
+text = "Reject"
+
+[node name="AllTags" type="VBoxContainer" parent="PC/HB"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="AddTags" type="HBoxContainer" parent="PC/HB/AllTags"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="PC/HB/AllTags/AddTags"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Add" type="Button" parent="PC/HB/AllTags/AddTags"]
+layout_mode = 2
+text = "Add
+"
+
+[node name="TagsAll" type="ItemList" parent="PC/HB/AllTags"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 3
+select_mode = 1
+
+[node name="TagsPopup" type="PopupMenu" parent="."]
+size = Vector2i(153, 89)
+item_count = 3
+item_0/text = "delete selected"
+item_0/id = 0
+item_1/text = "use selected"
+item_1/id = 1
+item_2/text = "discard selected"
+item_2/id = 2

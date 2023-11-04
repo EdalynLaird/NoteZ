@@ -1,0 +1,241 @@
+[gd_scene load_steps=21 format=3 uid="uid://da4trgn1xxrcd"]
+
+[ext_resource type="Script" path="res://addons/notez/DesignDocs/design_docs.gd" id="1_8ey4y"]
+[ext_resource type="FontFile" uid="uid://d27ncbnhojfy7" path="res://addons/notez/Fonts/Lato/Lato-Regular.ttf" id="1_kgv25"]
+[ext_resource type="FontFile" uid="uid://bnernnkf0mydw" path="res://addons/notez/Fonts/Lato/Lato-Bold.ttf" id="2_ub40f"]
+[ext_resource type="FontFile" uid="uid://s4hjggqc0xi2" path="res://addons/notez/Fonts/Lato/Lato-BoldItalic.ttf" id="3_a216e"]
+[ext_resource type="FontFile" uid="uid://cpmwt26b356gk" path="res://addons/notez/Fonts/Lato/Lato-Italic.ttf" id="4_fu4k5"]
+[ext_resource type="FontFile" uid="uid://dq2k60jqfaoco" path="res://addons/notez/Fonts/Lato/Lato-Thin.ttf" id="5_jeior"]
+[ext_resource type="Texture2D" uid="uid://b8v0ngrh8iuoy" path="res://addons/notez/Sprites/add.svg" id="7_vtn1h"]
+[ext_resource type="Texture2D" uid="uid://cbk2d0kvubxuj" path="res://addons/notez/Sprites/tag.svg" id="8_i72ry"]
+[ext_resource type="Texture2D" uid="uid://cbbr8fjr7mi4s" path="res://addons/notez/Sprites/yes.png" id="8_sx5e4"]
+[ext_resource type="Texture2D" uid="uid://byy7vq46dwbvt" path="res://addons/notez/Sprites/delete.svg" id="9_86yl8"]
+[ext_resource type="Texture2D" uid="uid://dokjfed8od8o3" path="res://addons/notez/Sprites/no.png" id="9_fb4rx"]
+[ext_resource type="Texture2D" uid="uid://bd1tc8pm1wbb6" path="res://addons/notez/Sprites/search.svg" id="10_jsau0"]
+[ext_resource type="Texture2D" uid="uid://0aikshkpt1yh" path="res://addons/notez/Sprites/visible.svg" id="11_kojkk"]
+[ext_resource type="Texture2D" uid="uid://juoh4w7qsog3" path="res://addons/notez/Sprites/hidden.svg" id="12_pm0e3"]
+[ext_resource type="Texture2D" uid="uid://c5dbdoflo4mwe" path="res://addons/notez/Sprites/edit.svg" id="13_y625q"]
+[ext_resource type="PackedScene" uid="uid://cvnenwe4h60fg" path="res://addons/notez/Todos/todos_container.tscn" id="15_tl0ww"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvob5"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27t3r"]
+bg_color = Color(0.337255, 0.337255, 0.337255, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xaib"]
+
+[sub_resource type="Theme" id="Theme_js7vr"]
+LineEdit/font_sizes/font_size = 16
+LineEdit/fonts/font = ExtResource("1_kgv25")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_jvob5")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_27t3r")
+RichTextLabel/font_sizes/bold_font_size = 16
+RichTextLabel/font_sizes/bold_italics_font_size = 16
+RichTextLabel/font_sizes/italics_font_size = 16
+RichTextLabel/font_sizes/mono_font_size = 16
+RichTextLabel/font_sizes/normal_font_size = 16
+RichTextLabel/fonts/bold_font = ExtResource("2_ub40f")
+RichTextLabel/fonts/bold_italics_font = ExtResource("3_a216e")
+RichTextLabel/fonts/italics_font = ExtResource("4_fu4k5")
+RichTextLabel/fonts/mono_font = ExtResource("5_jeior")
+RichTextLabel/fonts/normal_font = ExtResource("1_kgv25")
+TextEdit/font_sizes/font_size = 16
+VSeparator/styles/separator = SubResource("StyleBoxEmpty_4xaib")
+
+[node name="DesignDocs" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_js7vr")
+script = ExtResource("1_8ey4y")
+
+[node name="VS" type="HSplitContainer" parent="."]
+layout_mode = 2
+split_offset = 265
+
+[node name="VB" type="VBoxContainer" parent="VS"]
+layout_mode = 2
+
+[node name="HB" type="HBoxContainer" parent="VS/VB"]
+layout_mode = 2
+
+[node name="Add" type="Button" parent="VS/VB/HB"]
+layout_mode = 2
+icon = ExtResource("7_vtn1h")
+
+[node name="CreateDoc" type="FileDialog" parent="VS/VB/HB/Add"]
+initial_position = 2
+size = Vector2i(392, 300)
+root_subfolder = ".Notez/docs"
+filters = PackedStringArray("*.json")
+
+[node name="Tags" type="Button" parent="VS/VB/HB"]
+layout_mode = 2
+icon = ExtResource("8_i72ry")
+
+[node name="Delete" type="Button" parent="VS/VB/HB"]
+layout_mode = 2
+icon = ExtResource("9_86yl8")
+
+[node name="DeleteDoc" type="ConfirmationDialog" parent="VS/VB/HB/Delete"]
+initial_position = 2
+
+[node name="MenuButton" type="MenuButton" parent="VS/VB/HB"]
+layout_mode = 2
+text = "Sort: Name"
+item_count = 4
+popup/item_0/text = "Name"
+popup/item_0/id = 0
+popup/item_1/text = "Tag"
+popup/item_1/id = 1
+popup/item_2/text = "Color"
+popup/item_2/id = 2
+popup/item_3/text = "None"
+popup/item_3/id = 3
+
+[node name="SortInput" type="LineEdit" parent="VS/VB/HB"]
+layout_mode = 2
+right_icon = ExtResource("10_jsau0")
+
+[node name="SortColor" type="Button" parent="VS/VB/HB"]
+visible = false
+custom_minimum_size = Vector2(31, 31)
+layout_mode = 2
+
+[node name="P" type="Popup" parent="VS/VB/HB/SortColor"]
+initial_position = 4
+
+[node name="PC" type="PanelContainer" parent="VS/VB/HB/SortColor/P"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GC" type="GridContainer" parent="VS/VB/HB/SortColor/P/PC"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 6
+
+[node name="Tree" type="Tree" parent="VS/VB"]
+layout_mode = 2
+size_flags_vertical = 3
+hide_root = true
+
+[node name="Main" type="HBoxContainer" parent="VS"]
+layout_mode = 2
+
+[node name="GotoControls" type="VBoxContainer" parent="VS/Main"]
+layout_mode = 2
+
+[node name="Add" type="Button" parent="VS/Main/GotoControls"]
+layout_mode = 2
+icon = ExtResource("7_vtn1h")
+
+[node name="Delete" type="Button" parent="VS/Main/GotoControls"]
+layout_mode = 2
+focus_mode = 0
+icon = ExtResource("9_86yl8")
+
+[node name="Hide" type="CheckBox" parent="VS/Main/GotoControls"]
+layout_mode = 2
+theme_override_icons/checked = ExtResource("11_kojkk")
+theme_override_icons/unchecked = ExtResource("12_pm0e3")
+button_pressed = true
+flat = true
+
+[node name="SC" type="ScrollContainer" parent="VS/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VB" type="VBoxContainer" parent="VS/Main/SC"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="PanelContainer" parent="VS/Main/SC/VB"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VS/Main/SC/VB/Title"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextControls" type="HBoxContainer" parent="VS/Main/SC/VB"]
+layout_mode = 2
+
+[node name="Edit" type="Button" parent="VS/Main/SC/VB/TextControls"]
+layout_mode = 2
+text = "Edit"
+icon = ExtResource("13_y625q")
+
+[node name="Save" type="Button" parent="VS/Main/SC/VB/TextControls"]
+layout_mode = 2
+text = "Save"
+icon = ExtResource("8_sx5e4")
+
+[node name="Reject" type="Button" parent="VS/Main/SC/VB/TextControls"]
+layout_mode = 2
+text = "Reject"
+icon = ExtResource("9_fb4rx")
+
+[node name="VSeparator" type="VSeparator" parent="VS/Main/SC/VB/TextControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GotoJumps" type="MenuButton" parent="VS/Main/SC/VB/TextControls"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Gotos"
+flat = false
+
+[node name="ColorLabel" type="Label" parent="VS/Main/SC/VB/TextControls"]
+layout_mode = 2
+text = "Doc Color"
+
+[node name="DocColor" type="ColorPickerButton" parent="VS/Main/SC/VB/TextControls"]
+custom_minimum_size = Vector2(31, 31)
+layout_mode = 2
+
+[node name="Text" type="MarginContainer" parent="VS/Main/SC/VB"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VS/Main/SC/VB/Text"]
+layout_mode = 2
+focus_mode = 2
+bbcode_enabled = true
+fit_content = true
+selection_enabled = true
+
+[node name="Tables" type="Control" parent="VS/Main/SC/VB/Text/RichTextLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Gotos" type="Control" parent="VS/Main/SC/VB/Text/RichTextLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextEdit" type="TextEdit" parent="VS/Main/SC/VB/Text"]
+visible = false
+layout_mode = 2
+scroll_fit_content_height = true
+
+[node name="Todos" parent="VS/Main/SC/VB" instance=ExtResource("15_tl0ww")]
+layout_mode = 2
