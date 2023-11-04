@@ -476,10 +476,10 @@ func add_tree_item(dir: String, curr_item: TreeItem) -> TreeItem:
 	var item := curr_item.create_child()
 	item.set_text(0, target)
 	if is_last:
-		item.set_icon(0, preload("res://addons/notez/Sprites/edit.png"))
+		item.set_icon(0, preload("res://addons/notez/Sprites/edit.svg"))
 		return item
 	else:
-		item.set_icon(0, preload("res://addons/notez/Sprites/file.png"))
+		item.set_icon(0, preload("res://addons/notez/Sprites/folder.svg"))
 		return add_tree_item(dir.trim_prefix(target + "/"), item)
 	
 	return null
