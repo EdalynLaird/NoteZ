@@ -1,0 +1,26 @@
+{
+	"multi tag sort": {
+		"Progress Log": "",
+		"checked": false,
+		"name": "multi tag sort",
+		"tags": []
+	},
+	"scene notes show parent scene notes": {
+		"Progress Log": "",
+		"checked": false,
+		"name": "scene notes show parent scene notes",
+		"tags": []
+	},
+	"sort tags with dropdown": {
+		"Progress Log": "use a menu button instead of a line edit to sort tags\n\ndo this for both todo tags and doc tags",
+		"checked": false,
+		"name": "sort tags with dropdown",
+		"tags": []
+	},
+	"tool tips for everything": {
+		"Progress Log": "",
+		"checked": false,
+		"name": "tool tips for everything",
+		"tags": []
+	}
+}

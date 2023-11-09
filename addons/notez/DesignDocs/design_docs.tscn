@@ -235,6 +235,8 @@ mouse_filter = 2
 [node name="TextEdit" type="TextEdit" parent="VS/Main/SC/VB/Text"]
 visible = false
 layout_mode = 2
+wrap_mode = 1
+draw_tabs = true
 scroll_fit_content_height = true
 
 [node name="Todos" parent="VS/Main/SC/VB" instance=ExtResource("15_tl0ww")]

@@ -28,7 +28,9 @@ func _enter_tree():
 	add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BL, todo_list)
 	
 	await get_tree().create_timer(1).timeout
-	scene_changed.connect(scene_notes.chenge_scene)
+	scene_changed.connect(scene_notes.change_scene)
+	get_editor_interface().get_selection().selection_changed.connect(\
+	scene_notes.change_node.bind(get_editor_interface().get_selection()))
 	design_docs.open("res://.Notez/docs/main.json")
 	design_docs.interface = get_editor_interface()
 

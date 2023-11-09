@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cvnenwe4h60fg" path="res://addons/notez/Todos/todos_container.tscn" id="2_2ujst"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y4d4"]
-bg_color = Color(0.513726, 0.109804, 0.364706, 1)
+bg_color = Color(0.254902, 0.254902, 0.254902, 1)
 
 [sub_resource type="Theme" id="Theme_cacnq"]
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_1y4d4")
@@ -70,6 +70,8 @@ layout_mode = 2
 
 [node name="TextEdit" type="TextEdit" parent="VSP/Text/Container"]
 layout_mode = 2
+wrap_mode = 1
+draw_tabs = true
 
 [node name="Todos" parent="VSP" instance=ExtResource("2_2ujst")]
 layout_mode = 2

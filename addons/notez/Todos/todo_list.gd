@@ -12,5 +12,3 @@ func _ready():
 		else:
 			todo_container.checked_out_todos[i] = temp
 			todo_container.todo_container.add_child(temp)
-	
-	NotezAutoload.new_todo.connect(todo_container.check_out_new_todo)
