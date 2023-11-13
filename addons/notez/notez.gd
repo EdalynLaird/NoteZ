@@ -24,6 +24,8 @@ func _enter_tree():
 	add_autoload_singleton("NotezAutoload", "res://addons/notez/notez_autoload.gd")
 	
 	get_editor_interface().get_editor_main_screen().add_child(design_docs)
+	scene_notes.name = "Scene Notes"
+	todo_list.name = "Global Todos"
 	add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BL, scene_notes)
 	add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BL, todo_list)
 	
@@ -33,6 +35,8 @@ func _enter_tree():
 	scene_notes.change_node.bind(get_editor_interface().get_selection()))
 	design_docs.open("res://.Notez/docs/main.json")
 	design_docs.interface = get_editor_interface()
+	
+	scene_notes.change_scene(get_editor_interface().get_edited_scene_root())
 
 func _exit_tree():
 	remove_autoload_singleton("NotezAutoload")

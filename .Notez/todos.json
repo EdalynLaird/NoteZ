@@ -1,8 +1,20 @@
 {
+	"fix delete button": {
+		"Progress Log": "",
+		"checked": false,
+		"name": "fix delete button",
+		"tags": []
+	},
 	"multi tag sort": {
 		"Progress Log": "",
 		"checked": false,
 		"name": "multi tag sort",
+		"tags": []
+	},
+	"rename reject to clear": {
+		"Progress Log": "",
+		"checked": true,
+		"name": "rename reject to clear",
 		"tags": []
 	},
 	"scene notes show parent scene notes": {

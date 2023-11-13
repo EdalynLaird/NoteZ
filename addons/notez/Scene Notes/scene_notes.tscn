@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cvnenwe4h60fg" path="res://addons/notez/Todos/todos_container.tscn" id="2_2ujst"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y4d4"]
-bg_color = Color(0.254902, 0.254902, 0.254902, 1)
+bg_color = Color(0.211765, 0.239216, 0.290196, 1)
 
 [sub_resource type="Theme" id="Theme_cacnq"]
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_1y4d4")
@@ -35,9 +35,9 @@ layout_mode = 2
 layout_mode = 2
 text = "Save"
 
-[node name="Reject" type="Button" parent="VSP/Text/PC/Controls"]
+[node name="Clear" type="Button" parent="VSP/Text/PC/Controls"]
 layout_mode = 2
-text = "Reject"
+text = "Clear Chnages"
 
 [node name="Edit" type="Button" parent="VSP/Text/PC/Controls"]
 layout_mode = 2
@@ -47,31 +47,55 @@ text = "Edit"
 layout_mode = 2
 text = "Create"
 
-[node name="Referesh" type="Button" parent="VSP/Text/PC/Controls"]
+[node name="Refresh" type="Button" parent="VSP/Text/PC/Controls"]
 layout_mode = 2
-text = "Referesh"
+text = "Refresh"
 
 [node name="Delete" type="Button" parent="VSP/Text/PC/Controls"]
 layout_mode = 2
 text = "Delete"
+
+[node name="CD" type="ConfirmationDialog" parent="VSP/Text/PC/Controls/Delete"]
+title = "Please Confirm Delete"
+initial_position = 2
+size = Vector2i(250, 100)
 
 [node name="BackgroundColor" type="ColorPickerButton" parent="VSP/Text/PC/Controls"]
 custom_minimum_size = Vector2(31, 31)
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="Container" type="MarginContainer" parent="VSP/Text"]
+[node name="SC" type="ScrollContainer" parent="VSP/Text"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VSP/Text/Container"]
-visible = false
+[node name="VB" type="VBoxContainer" parent="VSP/Text/SC"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BaseNotes" type="VBoxContainer" parent="VSP/Text/SC/VB"]
 layout_mode = 2
 
-[node name="TextEdit" type="TextEdit" parent="VSP/Text/Container"]
+[node name="Container" type="MarginContainer" parent="VSP/Text/SC/VB"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VSP/Text/SC/VB/Container"]
+layout_mode = 2
+fit_content = true
+
+[node name="TextEdit" type="TextEdit" parent="VSP/Text/SC/VB/Container"]
+visible = false
 layout_mode = 2
 wrap_mode = 1
 draw_tabs = true
+
+[node name="Title" type="Label" parent="VSP/Text"]
+layout_mode = 2
+text = "Scene Todos"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Todos" parent="VSP" instance=ExtResource("2_2ujst")]
 layout_mode = 2

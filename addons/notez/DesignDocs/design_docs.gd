@@ -35,7 +35,7 @@ var checked_out_todos : Dictionary # "name" : todo(Node)
 
 @onready var edit_button : Button = $VS/Main/SC/VB/TextControls/Edit
 @onready var save_button : Button = $VS/Main/SC/VB/TextControls/Save
-@onready var reject_button : Button = $VS/Main/SC/VB/TextControls/Reject
+@onready var clear_button : Button = $VS/Main/SC/VB/TextControls/Clear
 
 @onready var edit : TextEdit = $VS/Main/SC/VB/Text/TextEdit
 @onready var label : RichTextLabel = $VS/Main/SC/VB/Text/RichTextLabel
@@ -87,7 +87,7 @@ func _ready():
 	color_picker.color_changed.connect(set_doc_color)
 	edit_button.pressed.connect(label_to_edit)
 	save_button.pressed.connect(edit_to_label.bind(true))
-	reject_button.pressed.connect(edit_to_label.bind(false))
+	clear_button.pressed.connect(edit_to_label.bind(false))
 	
 	# file controls
 	var create_file_dialog : FileDialog = $VS/VB/HB/Add/CreateDoc
@@ -243,7 +243,7 @@ func edit_to_label(save: bool):
 	label.show()
 	
 	save_button.hide()
-	reject_button.hide()
+	clear_button.hide()
 	edit_button.show()
 	
 	# tables!
@@ -303,7 +303,7 @@ func label_to_edit():
 	label.hide()
 	
 	save_button.show()
-	reject_button.show()
+	clear_button.show()
 	edit_button.hide()
 	
 	edit.begin_complex_operation()

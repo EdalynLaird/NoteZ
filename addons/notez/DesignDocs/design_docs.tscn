@@ -65,8 +65,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Add" type="Button" parent="VS/VB/HB"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 icon = ExtResource("7_vtn1h")
+icon_alignment = 1
 
 [node name="CreateDoc" type="FileDialog" parent="VS/VB/HB/Add"]
 initial_position = 2
@@ -75,12 +77,16 @@ root_subfolder = ".Notez/docs"
 filters = PackedStringArray("*.json")
 
 [node name="Tags" type="Button" parent="VS/VB/HB"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 icon = ExtResource("8_i72ry")
+icon_alignment = 1
 
 [node name="Delete" type="Button" parent="VS/VB/HB"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 icon = ExtResource("9_86yl8")
+icon_alignment = 1
 
 [node name="DeleteDoc" type="ConfirmationDialog" parent="VS/VB/HB/Delete"]
 initial_position = 2
@@ -100,6 +106,7 @@ popup/item_3/id = 3
 
 [node name="SortInput" type="LineEdit" parent="VS/VB/HB"]
 layout_mode = 2
+size_flags_horizontal = 3
 right_icon = ExtResource("10_jsau0")
 
 [node name="SortColor" type="Button" parent="VS/VB/HB"]
@@ -180,9 +187,9 @@ layout_mode = 2
 text = "Save"
 icon = ExtResource("8_sx5e4")
 
-[node name="Reject" type="Button" parent="VS/Main/SC/VB/TextControls"]
+[node name="Clear" type="Button" parent="VS/Main/SC/VB/TextControls"]
 layout_mode = 2
-text = "Reject"
+text = "Clear Changes"
 icon = ExtResource("9_fb4rx")
 
 [node name="VSeparator" type="VSeparator" parent="VS/Main/SC/VB/TextControls"]

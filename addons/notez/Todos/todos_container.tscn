@@ -34,6 +34,7 @@ popup/item_2/id = 2
 
 [node name="SortInput" type="LineEdit" parent="TodoControls"]
 layout_mode = 2
+size_flags_horizontal = 3
 right_icon = ExtResource("3_hmoe1")
 
 [node name="NewTodo" type="Window" parent="TodoControls"]
@@ -44,6 +45,7 @@ visible = false
 transient = true
 exclusive = true
 borderless = true
+popup_window = true
 
 [node name="PC" type="PanelContainer" parent="TodoControls/NewTodo"]
 anchors_preset = 15

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://df1igt0t5c4pb"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+bbcode_enabled = true
+text = "here 
+is 
+some 
+text"
+fit_content = true

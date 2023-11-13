@@ -1,4 +1,5 @@
-res://addons/notez/Scene Notes/scene_notes.tscn
+res://test.tscn
 res://addons/notez/Scene Notes/scene_notes.gd
-res://addons/notez/notez.gd
-res://addons/notez/DesignDocs/design_docs.tscn
+res://other_test.tscn
+res://addons/notez/Todos/todo.tscn
+res://addons/notez/Todos/todos_container.tscn

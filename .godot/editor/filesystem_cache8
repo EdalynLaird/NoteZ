@@ -1,17 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699568713
+::res://::1699913825
 icon.svg::CompressedTexture2D::4495470915490049265::1695591273::1699049240::1::::<><>::
+other_test.tscn::PackedScene::5627826574466598507::1699912265::0::1::::<><>::uid://dr0qgfcxluj2o::::res://test.tscn
 README.md::TextFile::-1::1699057206::0::1::::<><>::
+test.tscn::PackedScene::8405064290191912312::1699910537::0::1::::<><>::uid://dcpr227wpgira::::res://addons/notez/Todos/todo.tscn
 ::res://addons/::1699056781
-::res://addons/notez/::1699056782
-notez.gd::GDScript::-1::1699041094::0::1::::<>EditorPlugin<>::
+::res://addons/notez/::1699909611
+notez.gd::GDScript::-1::1699909611::0::1::::<>EditorPlugin<>::
 notez_autoload.gd::GDScript::-1::1698624704::0::1::::<>Node<>::
 plugin.cfg::TextFile::-1::1695591299::0::1::::<><>::
 tag_manager.gd::GDScript::-1::1696016692::0::1::::<>Window<>::
 tag_manager.tscn::PackedScene::3962564124813101640::1699049239::0::1::::<><>::res://addons/notez/tag_manager.gd
-::res://addons/notez/DesignDocs/::1699240332
-design_docs.gd::GDScript::-1::1699058315::0::1::::NotezDesignDoc<>PanelContainer<>::
-design_docs.tscn::PackedScene::7220313323741521459::1699240332::0::1::::<><>::res://addons/notez/DesignDocs/design_docs.gd<>uid://d27ncbnhojfy7
+::res://addons/notez/DesignDocs/::1699908364
+design_docs.gd::GDScript::-1::1699905785::0::1::::NotezDesignDoc<>PanelContainer<>::
+design_docs.tscn::PackedScene::7220313323741521459::1699908364::0::1::::<><>::res://addons/notez/DesignDocs/design_docs.gd<>uid://d27ncbnhojfy7::::res://addons/notez/Fonts/Lato/Lato-Regular.ttf<>uid://bnernnkf0mydw::::res://addons/notez/Fonts/Lato/Lato-Bold.ttf<>uid://s4hjggqc0xi2::::res://addons/notez/Fonts/Lato/Lato-BoldItalic.ttf<>uid://cpmwt26b356gk::::res://addons/notez/Fonts/Lato/Lato-Italic.ttf<>uid://dq2k60jqfaoco::::res://addons/notez/Fonts/Lato/Lato-Thin.ttf<>uid://b8v0ngrh8iuoy::::res://addons/notez/Sprites/add.svg<>uid://cbk2d0kvubxuj::::res://addons/notez/Sprites/tag.svg<>uid://cbbr8fjr7mi4s::::res://addons/notez/Sprites/yes.png<>uid://byy7vq46dwbvt::::res://addons/notez/Sprites/delete.svg<>uid://dokjfed8od8o3::::res://addons/notez/Sprites/no.png<>uid://bd1tc8pm1wbb6::::res://addons/notez/Sprites/search.svg<>uid://0aikshkpt1yh::::res://addons/notez/Sprites/visible.svg<>uid://juoh4w7qsog3::::res://addons/notez/Sprites/hidden.svg<>uid://c5dbdoflo4mwe::::res://addons/notez/Sprites/edit.svg<>uid://cvnenwe4h60fg::::res://addons/notez/Todos/todos_container.tscn
 goto.gd::GDScript::-1::1697386233::0::1::::<>HBoxContainer<>::
 goto.tscn::PackedScene::8655314688675840698::1699049239::0::1::::<><>::res://addons/notez/DesignDocs/goto.gd<>uid://ddg43o02beixh
 table.gd::GDScript::-1::1697306188::0::1::::<>VBoxContainer<>::
@@ -135,9 +137,10 @@ OpenDyslexic-Bold.otf::FontFile::8978954141098320814::1691356836::1696945981::1:
 OpenDyslexic-BoldItalic.otf::FontFile::1261440497648326395::1691356836::1696945981::1::::<><>::
 OpenDyslexic-Italic.otf::FontFile::2218508549270926748::1691356836::1696945981::1::::<><>::
 OpenDyslexic-Regular.otf::FontFile::4478527092075410513::1691356836::1696945981::1::::<><>::
-::res://addons/notez/Scene Notes/::1699240563
-scene_notes.gd::GDScript::-1::1699220138::0::1::::<>PanelContainer<>::
-scene_notes.tscn::PackedScene::3735278047646712213::1699240563::0::1::::<><>::res://addons/notez/Scene Notes/scene_notes.gd<>uid://cvnenwe4h60fg::::res://addons/notez/Todos/todos_container.tscn
+::res://addons/notez/Scene Notes/::1699913675
+base_notes_label.tscn::PackedScene::7564377579047819267::1699913406::0::1::::<><>::
+scene_notes.gd::GDScript::-1::1699913797::0::1::::<>PanelContainer<>::
+scene_notes.tscn::PackedScene::3735278047646712213::1699913675::0::1::::<><>::res://addons/notez/Scene Notes/scene_notes.gd<>uid://cvnenwe4h60fg::::res://addons/notez/Todos/todos_container.tscn
 ::res://addons/notez/Sprites/::1699056782
 add.svg::CompressedTexture2D::4747545938487611316::1699048797::1699050147::1::::<><>::
 delete.svg::CompressedTexture2D::4122479329130146657::1699048726::1699050147::1::::<><>::
@@ -157,10 +160,10 @@ table walls.png::CompressedTexture2D::6003496621146728720::1691962348::169561494
 tag.svg::CompressedTexture2D::4865320034263976437::1699055117::1699055442::1::::<><>::
 visible.svg::CompressedTexture2D::1755225641541100711::1699053696::1699053743::1::::<><>::
 yes.png::CompressedTexture2D::4846185986189823052::1691166980::1695614948::1::::<><>::
-::res://addons/notez/Todos/::1699220105
+::res://addons/notez/Todos/::1699905861
 todo.gd::GDScript::-1::1698612584::0::1::::NotezTodo<>PanelContainer<>::
 todo.tscn::PackedScene::7331687278562791874::1699055447::0::1::::<><>::res://addons/notez/Todos/todo.gd<>uid://bs6by0limlf7a
 todos_container.gd::GDScript::-1::1698870176::0::1::::<>VBoxContainer<>::
-todos_container.tscn::PackedScene::6273911240900638748::1699220105::0::1::::<><>::res://addons/notez/Todos/todos_container.gd<>uid://b8v0ngrh8iuoy
+todos_container.tscn::PackedScene::6273911240900638748::1699905861::0::1::::<><>::res://addons/notez/Todos/todos_container.gd<>uid://b8v0ngrh8iuoy::::res://addons/notez/Sprites/add.svg<>uid://bd1tc8pm1wbb6::::res://addons/notez/Sprites/search.svg
 todo_list.gd::GDScript::-1::1699072495::0::1::::<>PanelContainer<>::
 todo_list.tscn::PackedScene::9180246470463721059::1699049239::0::1::::<><>::res://addons/notez/Todos/todo_list.gd<>uid://cvnenwe4h60fg
